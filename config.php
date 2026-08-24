@@ -2,8 +2,10 @@
 /**
  * Project-specific configuration.
  *
- * This is the only file that should be edited per project.
- * Do not overwrite it when updating the plugin on an existing site.
+ * Every value can be overridden from wp-config.php. Define the matching
+ * constant there and this file will defer to it. Use that for anything
+ * environment-specific or sensitive, since this file is committed to
+ * version control.
  *
  * @package BlockBridge
  */
@@ -17,20 +19,23 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Front-end stylesheet loaded into the editor canvas so block previews
  * match the live site.
  *
- * Classic projects: point to the active theme's compiled stylesheet.
- * Headless projects: point to a build handed over by the front-end team
- * and placed in this plugin's assets directory.
- *
- * Set to an empty string to disable editor styles entirely.
+ * Define this in wp-config.php with an absolute URL. Left empty, block
+ * previews still work but are rendered without front-end styles.
  */
-define( 'BB_FRONT_CSS', get_stylesheet_directory_uri() . '/dist/app.css' );
+if ( ! defined( 'BB_FRONT_CSS' ) ) {
+    define( 'BB_FRONT_CSS', '' );
+}
 
 /**
  * Slug for the block category. Lowercase letters and dashes only.
  */
-define( 'BB_CATEGORY_SLUG', 'blockbridge' );
+if ( ! defined( 'BB_CATEGORY_SLUG' ) ) {
+    define( 'BB_CATEGORY_SLUG', 'blockbridge' );
+}
 
 /**
  * Human-readable block category label shown in the editor inserter.
  */
-define( 'BB_CATEGORY_TITLE', 'Site Blocks' );
+if ( ! defined( 'BB_CATEGORY_TITLE' ) ) {
+    define( 'BB_CATEGORY_TITLE', 'Site Blocks' );
+}
