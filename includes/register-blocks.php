@@ -37,7 +37,6 @@ function bb_register_blocks() {
     if ( empty( $directories ) ) {
         return;
     }
-
     foreach ( $directories as $directory ) {
         // A directory without a block.json is not a block. Skip it silently.
         if ( ! file_exists( $directory . '/block.json' ) ) {

@@ -1,0 +1,4 @@
+/* Keep the block visible in the editor before any field is filled in. */
+.bb-example {
+    min-height: 80px;
+}
