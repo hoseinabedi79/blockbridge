@@ -1,0 +1,77 @@
+/**
+ * Editor preview base styles.
+ *
+ * For headless projects where the front end owns the real design. These
+ * styles exist only to keep block previews readable in the editor, not to
+ * match the live site. The dashed outline is deliberate: it signals to the
+ * editor that this is a preview, not the finished page.
+ */
+
+/* Every block container. Add your block's root class to this list. */
+[class^="bb-"],
+[class*=" bb-"] {
+    box-sizing: border-box;
+}
+
+/* Block wrapper. Applies to any element whose class starts with bb- and
+   has no double underscore, i.e. block roots rather than their children. */
+.bb-block,
+[class^="bb-"]:not([class*="__"]) {
+    padding: 1.5rem;
+    margin: 0 0 1rem;
+    min-height: 60px;
+    border: 1px dashed #c3c4c7;
+    border-radius: 4px;
+    background: #fff;
+}
+
+/* Headings inside any block. */
+[class*="__title"],
+[class*="__heading"] {
+    margin: 0 0 0.75rem;
+    font-size: 1.375rem;
+    font-weight: 600;
+    line-height: 1.3;
+    color: #1e1e1e;
+}
+
+/* Body copy inside any block. */
+[class*="__text"],
+[class*="__description"],
+[class*="__answer"] {
+    margin: 0 0 0.75rem;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #50575e;
+}
+
+/* Images inside any block. */
+[class*="__image"],
+[class*="__img"] {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 0 0 0.75rem;
+    border-radius: 4px;
+}
+
+/* Repeated items, such as FAQ rows or card lists. */
+[class*="__item"] {
+    padding: 0.75rem;
+    margin: 0 0 0.5rem;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    background: #fafafa;
+}
+
+/* Buttons and links styled as buttons. */
+[class*="__button"],
+[class*="__cta"] {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border: 1px solid #2271b1;
+    border-radius: 3px;
+    color: #2271b1;
+    text-decoration: none;
+    font-size: 0.875rem;
+}
