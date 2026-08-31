@@ -39,3 +39,17 @@ if ( ! defined( 'BB_CATEGORY_SLUG' ) ) {
 if ( ! defined( 'BB_CATEGORY_TITLE' ) ) {
     define( 'BB_CATEGORY_TITLE', 'Site Blocks' );
 }
+
+/**
+ * Enable the REST API layer. Headless projects only.
+ */
+if ( ! defined( 'BB_ENABLE_REST' ) ) {
+    define( 'BB_ENABLE_REST', false );
+}
+
+/**
+ * Enable the GraphQL API layer. Headless projects only.
+ */
+if ( ! defined( 'BB_ENABLE_GRAPHQL' ) ) {
+    define( 'BB_ENABLE_GRAPHQL', false );
+}

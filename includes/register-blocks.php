@@ -37,6 +37,7 @@ function bb_register_blocks() {
     if ( empty( $directories ) ) {
         return;
     }
+
     foreach ( $directories as $directory ) {
         // A directory without a block.json is not a block. Skip it silently.
         if ( ! file_exists( $directory . '/block.json' ) ) {
@@ -44,6 +45,11 @@ function bb_register_blocks() {
         }
 
         register_block_type( $directory );
+
+        // Optional per-block API output shaping.
+        if ( file_exists( $directory . '/api.php' ) ) {
+            require_once $directory . '/api.php';
+        }
     }
 }
 add_action( 'init', 'bb_register_blocks' );

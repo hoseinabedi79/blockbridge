@@ -39,3 +39,10 @@ require_once BB_PATH . 'includes/acf-json.php';
 require_once BB_PATH . 'includes/block-category.php';
 require_once BB_PATH . 'includes/register-blocks.php';
 require_once BB_PATH . 'includes/editor-styles.php';
+require_once BB_PATH . 'includes/block-parser.php';
+if ( BB_ENABLE_REST ) {
+    require_once BB_PATH . 'includes/api-rest.php';
+}
+if ( BB_ENABLE_GRAPHQL ) {
+    require_once BB_PATH . 'includes/api-graphql.php';
+}
