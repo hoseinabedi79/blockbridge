@@ -50,6 +50,10 @@ function bb_register_blocks() {
         if ( file_exists( $directory . '/api.php' ) ) {
             require_once $directory . '/api.php';
         }
+        // Optional per-block GraphQL type.
+        if ( file_exists( $directory . '/graphql.php' ) ) {
+            require_once $directory . '/graphql.php';
+        }
     }
 }
 add_action( 'init', 'bb_register_blocks' );
